@@ -1,17 +1,13 @@
 <template>
   <div class="m-container">
-    <div class="m-container__search">
+    <div class="m-container__search" @keydown.enter="getUserData">
       <b-field
         class="m-container__searchInput"
         label="Username"
         type="is-success"
         message="This username is available"
       >
-        <b-input
-          @keydown.enter="getUserData"
-          v-model="username"
-          maxlength="30"
-        ></b-input>
+        <b-input v-model="username" maxlength="30"></b-input>
       </b-field>
 
       <b-button
@@ -23,14 +19,19 @@
       </b-button>
     </div>
 
-    <user-card :userData="user"></user-card>
+    <user-card-skeleton v-if="loading"></user-card-skeleton>
+    <user-card
+      v-else-if="!loading && hasUserLoaded"
+      :userData="user"
+    ></user-card>
   </div>
 </template>
 
 <script>
 import axios from "./github-instance";
 
-import UserCard from "@/components/Card.vue";
+import UserCard from "@/components/UserCard.vue";
+import UserCardSkeleton from "@/components/Skeleton.vue";
 
 export default {
   name: "App",
@@ -39,10 +40,12 @@ export default {
       username: "afozbek",
       user: {},
       loading: false,
+      hasUserLoaded: false,
     };
   },
   components: {
     UserCard,
+    UserCardSkeleton,
   },
   methods: {
     async getUserData() {
@@ -50,8 +53,11 @@ export default {
 
       const result = await axios.get(`/users/${this.username}`);
 
-      console.log(result.data);
+      this.user = result.data;
+      console.log({ ...result.data });
+
       this.loading = false;
+      this.hasUserLoaded = true;
     },
   },
 };
@@ -67,6 +73,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 
     &Input {
       margin-right: 5px;
