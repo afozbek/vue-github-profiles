@@ -7,6 +7,8 @@ Search the specific user and visit individual page for repo info
 > Search the specific user and visit individual page for repo info
 
 **Main Page '/'**
+![Main Page 2](assets/main-page-2.png)
+
 ![Main Page](assets/main-page.png)
 
 **User Page '/user/:username'**
