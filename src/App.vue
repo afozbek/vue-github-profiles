@@ -15,6 +15,7 @@ export default {
   width: 500px;
   margin: 0 auto;
   padding-top: 150px;
+  padding-bottom: 50px;
 
   &__search {
     display: flex;
