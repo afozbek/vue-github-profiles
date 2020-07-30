@@ -34,8 +34,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   border-radius: 5px;
-  width: 80%;
-  margin: 0 auto;
   margin-bottom: 20px;
 }
 
