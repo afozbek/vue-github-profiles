@@ -1,24 +1,9 @@
 # github-profiles
 
-## Project setup
-```
-yarn install
-```
+Search the specific user and visit individual page for repo info
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+**Main Page '/'**
+![Main Page](assets/main-page.png)
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**User Page '/user/:username'**
+![User Page](assets/user-page.png)
