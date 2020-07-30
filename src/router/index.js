@@ -16,6 +16,7 @@ const routes = [
     path: "/user/:username",
     name: ROUTES.USER_PAGE,
     component: () => import(/* webpackChunkName: "User" */ "@/views/User.vue"),
+    props: { default: true, sidebar: false },
   },
 ];
 

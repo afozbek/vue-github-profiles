@@ -2,7 +2,7 @@
   <div>
     <search></search>
 
-    <user-card-skeleton v-if="loading"></user-card-skeleton>
+    <user-card-skeleton v-if="loading" :media="3"></user-card-skeleton>
     <user-search-list v-else :userList="userList"></user-search-list>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import Search from "@/components/Home/Search.vue";
 import UserSearchList from "@/components/Home/UserList.vue";
-import UserCardSkeleton from "@/components/Home/UserCardSkeleton.vue";
+import UserCardSkeleton from "@/components/common/UserCardSkeleton.vue";
 
 import { mapGetters } from "vuex";
 

@@ -17,12 +17,6 @@
       Search
     </b-button>
   </div>
-
-  <!-- <user-card-skeleton v-if="loading"></user-card-skeleton>
-    <user-card
-      v-else-if="!loading && hasUserLoaded"
-      :userData="user"
-    ></user-card> -->
 </template>
 
 <script>
