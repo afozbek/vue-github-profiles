@@ -1,28 +1,32 @@
 <template>
   <div>
-    <search @user-search="userList = $event"></search>
+    <search></search>
 
-    <user-search-list :userList="userList"></user-search-list>
+    <user-card-skeleton v-if="loading"></user-card-skeleton>
+    <user-search-list v-else :userList="userList"></user-search-list>
   </div>
 </template>
 
 <script>
 import Search from "@/components/Home/Search.vue";
 import UserSearchList from "@/components/Home/UserList.vue";
+import UserCardSkeleton from "@/components/Home/UserCardSkeleton.vue";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "Home",
-  data() {
-    return {
-      userList: [],
-    };
-  },
+
   components: {
     Search,
     UserSearchList,
+    UserCardSkeleton,
   },
-  methods: {
-    getUserList() {},
+  computed: {
+    ...mapGetters({
+      userList: "users/getUserList",
+      loading: "users/getLoadingStatus",
+    }),
   },
 };
 </script>
