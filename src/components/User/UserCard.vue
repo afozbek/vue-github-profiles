@@ -39,18 +39,24 @@
         {{ userData.bio }}
       </div>
     </div>
+
+    <router-link to="/">
+      <close-icon></close-icon>
+    </router-link>
   </div>
 </template>
 
 <script>
 import FollowerIcon from "@/components/icons/FollowerIcon.vue";
 import StarIcon from "@/components/icons/StarIcon.vue";
+import CloseIcon from "@/components/icons/CloseIcon.vue";
 
 export default {
   name: "UserCard",
   props: ["userData"],
   components: {
     FollowerIcon,
+    CloseIcon,
   },
 };
 </script>
@@ -58,6 +64,14 @@ export default {
 <style lang="scss" scoped>
 .card {
   border-radius: 5px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  stroke: #000;
 }
 
 .image img {

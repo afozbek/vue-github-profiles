@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/user/${userData.login}`">
+  <router-link :to="`/user/${userData.login}`" :username="userData.username">
     <div class="card">
       <div class="card-content">
         <div class="media">
