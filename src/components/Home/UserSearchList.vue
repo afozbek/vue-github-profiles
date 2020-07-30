@@ -38,6 +38,10 @@ export default {
   width: 80%;
   margin: 0 auto;
 
+  @media screen and (max-width: 640px) {
+    width: 90%;
+  }
+
   h1 {
     margin-bottom: 20px;
   }

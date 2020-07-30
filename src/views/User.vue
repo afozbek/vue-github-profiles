@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="userPage">
     <user-card-skeleton v-if="loading" :media="5"></user-card-skeleton>
     <user-card v-else :userData="userData"></user-card>
 
@@ -54,3 +54,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.userPage {
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 640px) {
+    width: 80%;
+  }
+}
+</style>

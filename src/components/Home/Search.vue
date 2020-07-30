@@ -11,6 +11,7 @@
     <b-button
       @click="getUserData"
       class="m-container__searchButton"
+      expanded=""
       type="is-dark"
     >
       Search

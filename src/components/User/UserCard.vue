@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <div class="m-userSection">
+      <div v-if="!isTablet" class="m-userSection">
         <FollowerIcon />
         <div class="m-userSection__followers">
           <strong>{{ userData.followers }}</strong> followers
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <router-link to="/">
+    <router-link v-if="!isTablet" to="/">
       <close-icon></close-icon>
     </router-link>
   </div>
@@ -53,6 +53,11 @@ import CloseIcon from "@/components/icons/CloseIcon.vue";
 
 export default {
   name: "UserCard",
+  data() {
+    return {
+      isTablet: window.innerWidth < 640,
+    };
+  },
   props: ["userData"],
   components: {
     FollowerIcon,
