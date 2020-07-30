@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-card-skeleton v-if="loading" :media="1"></user-card-skeleton>
+    <user-card-skeleton v-if="loading" :media="5"></user-card-skeleton>
     <user-card v-else :userData="userData"></user-card>
 
     <user-repo
