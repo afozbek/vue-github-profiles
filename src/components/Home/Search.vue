@@ -2,7 +2,6 @@
   <div class="m-container__search" @keydown.enter="getUserData">
     <b-field
       class="m-container__searchInput"
-      label="Username"
       :type="inputType"
       :message="errorMessage"
     >
