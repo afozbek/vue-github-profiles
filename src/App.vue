@@ -20,7 +20,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
 
     &Input {
       margin-right: 5px;
