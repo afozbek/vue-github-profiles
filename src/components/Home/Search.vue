@@ -5,7 +5,7 @@
       :type="inputType"
       :message="errorMessage"
     >
-      <b-input v-model="username" maxlength="30"></b-input>
+      <b-input v-model="username" maxlength="30" expanded=""></b-input>
     </b-field>
 
     <b-button
@@ -57,16 +57,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-// .m-container {
-//   &__searchButton {
-//     background-color: #24292e;
-//     color: #fff;
-
-//     &:hover {
-//       color: #fff;
-//       background-color: #24292edb;
-//     }
-//   }
-// }
-</style>
+<style lang="scss" scoped></style>

@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="home">
     <search @username="username = $event"></search>
 
     <user-card-skeleton v-if="loading" :media="3"></user-card-skeleton>
+    <info-message
+      v-else-if="!loading && userList.length === 0 && !loading"
+    ></info-message>
     <user-search-list
       v-else
       :userList="userList"
@@ -15,6 +18,7 @@
 import Search from "@/components/Home/Search.vue";
 import UserSearchList from "@/components/Home/UserSearchList.vue";
 import UserCardSkeleton from "@/components/common/UserCardSkeleton.vue";
+import InfoMessage from "@/components/Home/InfoMessage.vue";
 
 import { mapGetters } from "vuex";
 
@@ -29,6 +33,7 @@ export default {
     Search,
     UserSearchList,
     UserCardSkeleton,
+    InfoMessage,
   },
   computed: {
     ...mapGetters({
@@ -39,4 +44,9 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.home {
+  width: 90%;
+  margin: 0 auto;
+}
+</style>

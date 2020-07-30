@@ -7,13 +7,14 @@ Search the specific user and visit individual page for repo info
 > Search the specific user and visit individual page for repo info
 
 **Main Page '/'**
-![Main Page](assets/main-page.png)
+![Main Page 2](assets/main-page-2.png)
 
-![Main Page Dark](assets/loading-home-dark.png)
+![Main Page](assets/main-page.png)
 
 **User Page '/user/:username'**
 ![User Page](assets/user-page.png)
 
+**Dark Mode**
 ![User Page Dark](assets/user-dark.png)
 
 ### Installing

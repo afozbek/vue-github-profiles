@@ -84,14 +84,13 @@ body {
   &__search {
     display: flex;
     justify-content: center;
-    margin: 0 30px;
+    // margin: 0 30px;
 
     @media screen and (max-width: 640px) {
       flex-direction: column;
       justify-content: flex-start;
       margin: 0;
 
-      width: 90%;
       margin: 0 auto;
     }
 
