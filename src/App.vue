@@ -43,6 +43,7 @@ export default {
   background: #24292e;
   text-align: center;
   text-transform: uppercase;
+  z-index: 1000;
   font-size: 20px;
   letter-spacing: 1px;
   font-size: 20px;
