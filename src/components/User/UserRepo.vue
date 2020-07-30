@@ -43,6 +43,19 @@ export default {
           return { "-vue": true };
         case "JavaScript":
           return { "-js": true };
+        case "CSS":
+          return { "-css": true };
+        case "HTML":
+          return { "-html": true };
+        case "Java":
+          return { "-java": true };
+        case "Python":
+          return { "-python": true };
+        case "C#":
+          return { "-csharp": true };
+        case "C":
+          return { "-c": true };
+
         default:
           return;
       }
@@ -77,6 +90,7 @@ export default {
     text-decoration: none;
     margin-left: 5px;
     padding-bottom: 4px;
+    font-weight: 500;
 
     &:hover {
       text-decoration: underline;
@@ -112,6 +126,30 @@ export default {
 
       &.-js {
         background-color: #f1e05a;
+      }
+
+      &.-css {
+        background-color: #563d7c;
+      }
+
+      &.-html {
+        background-color: #e34c26;
+      }
+
+      &.-java {
+        background-color: #b07219;
+      }
+
+      &.-python {
+        background-color: #3572a5;
+      }
+
+      &.-csharp {
+        background-color: #178600;
+      }
+
+      &.-c {
+        background-color: #555555;
       }
     }
   }
