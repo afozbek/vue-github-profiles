@@ -59,13 +59,9 @@ export default {
     const isLightActive = JSON.parse(localStorage.getItem("isLightTheme"));
 
     if (isLightActive) {
-      console.log("LIGHT a düştü");
-
       document.body.classList.add("light");
       this.$refs.toggleThemeCheckbox.checked = true;
     } else {
-      console.log("DARK'a düştü");
-
       document.body.classList.add("dark");
       this.lightTheme = false;
       this.$refs.toggleThemeCheckbox.checked = false;
