@@ -34,17 +34,17 @@ export default {
 }
 
 .m-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px;
+  padding: 25px;
   color: white;
   background: #24292e;
   text-align: center;
   text-transform: uppercase;
   z-index: 1000;
-  font-size: 20px;
+  font-size: px;
   letter-spacing: 1px;
   font-size: 20px;
   font-weight: 500;
