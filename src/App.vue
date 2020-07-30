@@ -1,7 +1,8 @@
 <template>
   <div class="m-container">
     <header class="m-header">
-      Github User Search App
+      <router-link to="/">Github User Search App</router-link>
+
       <div class="toggle-theme">
         <input
           class="toggle-theme__checkbox"
@@ -79,7 +80,7 @@ body {
 }
 
 .m-container {
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   padding-top: 150px;
   padding-bottom: 50px;
@@ -87,13 +88,35 @@ body {
   &__search {
     display: flex;
     justify-content: center;
+    margin: 0 30px;
+
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0;
+
+      width: 90%;
+      margin: 0 auto;
+    }
 
     &Input {
       margin-right: 5px;
+      min-width: 300px;
+
+      @media screen and (max-width: 640px) {
+        margin-right: 0;
+
+        & .help.counter.is-invisible {
+          display: none;
+        }
+      }
     }
 
     &Button {
       margin-bottom: 2px;
+      @media screen and (max-width: 640px) {
+        margin-bottom: 60px;
+      }
     }
   }
 }
@@ -114,6 +137,20 @@ body {
   font-size: 20px;
   font-weight: 500;
   box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.53);
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 16px;
+    text-align: left;
+  }
 }
 
 .toggle-theme {
