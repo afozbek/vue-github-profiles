@@ -27,6 +27,7 @@
 
 <script>
 import axios from "@/github-instance";
+import { mapActions } from "vuex";
 
 export default {
   name: "Search",
@@ -37,16 +38,11 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+      getUserList: "users/getUserList",
+    }),
     async getUserData() {
-      console.log("Getting");
-
-      const result = await axios.get(`/search/users?q=${this.username}`);
-
-      this.userList = result.data.total_count > 0 ? result.data.items : [];
-
-      console.log({ ...this.userList[0] });
-
-      this.$emit("user-search", this.userList);
+      this.getUserList({ username: this.username });
     },
   },
 };
