@@ -9,11 +9,10 @@ Search the specific user and visit individual page for repo info
 **Main Page '/'**
 ![Main Page](assets/main-page.png)
 
-![Main Page Dark](assets/loading-home-dark.png)
-
 **User Page '/user/:username'**
 ![User Page](assets/user-page.png)
 
+**Dark Mode**
 ![User Page Dark](assets/user-dark.png)
 
 ### Installing
