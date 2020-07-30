@@ -8,6 +8,7 @@
           type="checkbox"
           name="toggle-theme"
           id="toggle-theme"
+          ref="toggleThemeCheckbox"
         />
 
         <label
@@ -42,14 +43,41 @@ export default {
   },
   methods: {
     changeApplicationTheme() {
-      console.log("Değişiyor");
       this.lightTheme = !this.lightTheme;
+
+      localStorage.setItem("isLightTheme", this.lightTheme);
+      document.body.classList = [];
+      if (this.lightTheme) {
+        document.body.classList.add("light");
+      } else {
+        document.body.classList.add("dark");
+      }
     },
+  },
+  mounted() {
+    const isLightActive = JSON.parse(localStorage.getItem("isLightTheme"));
+
+    if (isLightActive) {
+      console.log("LIGHT a düştü");
+
+      document.body.classList.add("light");
+      this.$refs.toggleThemeCheckbox.checked = true;
+    } else {
+      console.log("DARK'a düştü");
+
+      document.body.classList.add("dark");
+      this.lightTheme = false;
+      this.$refs.toggleThemeCheckbox.checked = false;
+    }
   },
 };
 </script>
 
 <style lang="scss">
+body {
+  min-height: 100vh;
+}
+
 .m-container {
   width: 500px;
   margin: 0 auto;
@@ -59,7 +87,6 @@ export default {
   &__search {
     display: flex;
     justify-content: center;
-    align-items: center;
 
     &Input {
       margin-right: 5px;
@@ -130,5 +157,15 @@ export default {
   &__checkbox:checked ~ .toggle-theme__label .ball {
     transform: translateX(37px);
   }
+}
+
+.dark {
+  background: #24292e;
+  color: #fff;
+}
+
+.light {
+  background: #fff;
+  color: #24292e;
 }
 </style>

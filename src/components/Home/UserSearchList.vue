@@ -1,7 +1,7 @@
 <template>
   <div class="search-list">
     <h1 v-if="userList.length">
-      Results for <strong>{{ username }}</strong
+      Results for <b>{{ username }}</b
       >:
     </h1>
 
