@@ -73,8 +73,6 @@ export default {
   right: 20px;
   stroke: #000;
 }
-.media-content {
-}
 
 .image img {
   border-radius: 50%;

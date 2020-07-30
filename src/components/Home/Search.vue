@@ -12,7 +12,7 @@
     <b-button
       @click="getUserData"
       class="m-container__searchButton"
-      type="is-success"
+      type="is-dark"
     >
       Search
     </b-button>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       username: "",
-      type: "is-success",
+      type: "is-dark",
     };
   },
   computed: {
@@ -38,7 +38,7 @@ export default {
       errorMessage: "users/errorMessage",
     }),
     inputType() {
-      return this.hasError ? "is-danger" : "is-success";
+      return this.hasError ? "is-danger" : "is-dark";
     },
   },
   mounted() {
@@ -56,3 +56,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+// .m-container {
+//   &__searchButton {
+//     background-color: #24292e;
+//     color: #fff;
+
+//     &:hover {
+//       color: #fff;
+//       background-color: #24292edb;
+//     }
+//   }
+// }
+</style>

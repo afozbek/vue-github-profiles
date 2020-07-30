@@ -39,7 +39,7 @@ export default {
         this.userData = res.data;
 
         const repos = await axios.get(
-          `/users/${this.$route.params.username}/repos?sort=stars&per_page=6`
+          `/users/${this.$route.params.username}/repos?sort=created`
         );
 
         console.log({ ...repos.data[0] });
