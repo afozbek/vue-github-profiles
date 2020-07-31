@@ -26,6 +26,15 @@ Search the specific user and visit individual page for repo info
 
 You can easily deploy the project over [Netlify](https://www.netlify.com/) or `github-pages`. Check out the documentation
 
+## Feature Ideas
+
+**New Feature Ideas**
+- Pagination in User Repositories
+- Adding routing to repositories like `/user/afozbek/repos/:id`
+- Authentication
+- Pagination in the Search Page
+- Filter/Sorting in pages like name, star_count
+
 ## Built With
 
 - [Vue](https://vuejs.org/) - UI library for javascript
