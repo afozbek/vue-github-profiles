@@ -5,7 +5,12 @@
       :type="inputType"
       :message="errorMessage"
     >
-      <b-input v-model="username" maxlength="30" expanded=""></b-input>
+      <b-input
+        v-model="username"
+        placeholder="Search users.."
+        maxlength="30"
+        expanded=""
+      ></b-input>
     </b-field>
 
     <b-button
@@ -49,6 +54,10 @@ export default {
       getUserList: "users/getUserList",
     }),
     async getUserData() {
+      if (this.username.length === 0) {
+        return;
+      }
+
       localStorage.setItem("username", this.username);
 
       this.getUserList({ username: this.username });
