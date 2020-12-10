@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import RepoIcon from "@/components/icons/RepositoryIcon.vue";
-import StarIcon from "@/components/icons/StarIcon.vue";
-import moment from "moment";
+import RepoIcon from '@/components/icons/RepositoryIcon.vue';
+import StarIcon from '@/components/icons/StarIcon.vue';
+import moment from 'moment';
 
 export default {
-  name: "UserRepo",
-  props: ["repo"],
+  name: 'UserRepo',
+  props: ['repo'],
   components: {
     RepoIcon,
     StarIcon,
@@ -39,28 +39,28 @@ export default {
   computed: {
     languageColor() {
       switch (this.repo.language) {
-        case "Vue":
-          return { "-vue": true };
-        case "JavaScript":
-          return { "-js": true };
-        case "CSS":
-          return { "-css": true };
-        case "HTML":
-          return { "-html": true };
-        case "Java":
-          return { "-java": true };
-        case "Python":
-          return { "-python": true };
-        case "C#":
-          return { "-csharp": true };
-        case "C":
-          return { "-c": true };
+        case 'Vue':
+          return { '-vue': true };
+        case 'JavaScript':
+          return { '-js': true };
+        case 'TypeScript':
+          return { '-ts': true };
+        case 'CSS':
+          return { '-css': true };
+        case 'HTML':
+          return { '-html': true };
+        case 'Java':
+          return { '-java': true };
+        case 'Python':
+          return { '-python': true };
+        case 'C#':
+          return { '-csharp': true };
+        case 'C':
+          return { '-c': true };
 
         default:
           return;
       }
-
-      return;
     },
     fromTime() {
       return moment(new Date(this.repo.updated_at)).fromNow();
@@ -126,6 +126,10 @@ export default {
 
       &.-js {
         background-color: #f1e05a;
+      }
+
+      &.-ts {
+        background-color: #2b7489;
       }
 
       &.-css {
